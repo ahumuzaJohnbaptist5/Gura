@@ -1,0 +1,41 @@
+<!-- core/templates/core/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}GURA - Find. Fix. Connect.{% endblock %}</title>
+    <!-- Tailwind CSS CDN for Hackathon Speed -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+ <!-- Inside the <nav> tag in base.html -->
+<div class="flex items-center space-x-4">
+    {% if user.is_authenticated %}
+        <span class="text-gray-700 font-medium">Hi, {{ user.username }}</span>
+        <a href="{% url 'logout' %}" class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition font-medium">Logout</a>
+    {% else %}
+        <a href="{% url 'login' %}" class="text-blue-600 hover:text-blue-800 font-medium">Login</a>
+        <a href="{% url 'register' %}" class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition font-medium shadow-md">Get Started</a>
+    {% endif %}
+</div>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        {% block content %}
+        <!-- Child templates will inject content here -->
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2026 GURA. Built for the Hackathon.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

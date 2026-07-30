@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-lg">
+        <div>
+            <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign in to GURA</h2>
+        </div>
+        <form class="mt-8 space-y-6" method="POST">
+            {% csrf_token %}
+            <div class="rounded-md shadow-sm -space-y-px">
+                <div class="mb-4">
+                    <label for="id_username" class="block text-sm font-medium text-gray-700">Username</label>
+                    {{ form.username }}
+                </div>
+                <div>
+                    <label for="id_password" class="block text-sm font-medium text-gray-700">Password</label>
+                    {{ form.password }}
+                </div>
+            </div>
+
+            {% if form.errors %}
+            <div class="bg-red-50 text-red-500 p-3 rounded-md text-sm">
+                Invalid username or password.
+            </div>
+            {% endif %}
+
+            <div>
+              <!-- Change from bg-blue-600 to bg-orange-500 -->
+<button type="submit" class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-bold rounded-lg text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition shadow-md">
+    Sign in  <!-- or Create Account -->
+</button>
+            </div>
+            <div class="text-center">
+                <p class="text-sm text-gray-600">Don't have an account? <a href="{% url 'register' %}" class="font-medium text-blue-600 hover:text-blue-500">Register here</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
