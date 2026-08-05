@@ -1,43 +1,85 @@
-<!-- Replace the navigation section in base.html with this: -->
-<nav class="bg-white/90 backdrop-blur-md shadow-sm fixed w-full z-50 top-0 border-b border-gray-100">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
-            
-            <!-- Logo -->
-            <a href="{% url 'home' %}" class="flex items-center space-x-2 group">
-                <div class="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:bg-blue-700 transition">
-                    G
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}GURA - Find. Fix. Connect.{% endblock %}</title>
+    
+    <!-- 1. Tailwind CSS CDN (This is the magic that makes it look good) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 3. Premium Google Font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Navbar -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm fixed w-full z-50 top-0 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo -->
+                <a href="{% url 'home' %}" class="flex items-center space-x-2 group">
+                    <div class="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-md group-hover:bg-blue-700 transition">
+                        G
+                    </div>
+                    <span class="text-2xl font-extrabold text-gray-900 tracking-tight">GURA</span>
+                </a>
+
+                <!-- Centered Navigation Links -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="{% url 'home' %}" class="text-gray-600 hover:text-blue-600 font-medium transition duration-200">Home</a>
+                    <a href="{% url 'services' %}" class="text-gray-600 hover:text-blue-600 font-medium transition duration-200">Services</a>
+                    <a href="{% url 'how_it_works' %}" class="text-gray-600 hover:text-blue-600 font-medium transition duration-200">How It Works</a>
+                    <a href="{% url 'providers' %}" class="text-gray-600 hover:text-blue-600 font-medium transition duration-200">Providers</a>
+                    <a href="{% url 'about' %}" class="text-gray-600 hover:text-blue-600 font-medium transition duration-200">About</a>
+                    <a href="{% url 'contact' %}" class="text-gray-600 hover:text-blue-600 font-medium transition duration-200">Contact</a>
                 </div>
-                <span class="text-2xl font-extrabold text-gray-900 tracking-tight">GURA</span>
-            </a>
 
-            <!-- Centered Navigation Links -->
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="{% url 'home' %}" class="text-gray-600 hover:text-blue-600 font-medium transition duration-200">Home</a>
-                <a href="{% url 'services' %}" class="text-gray-600 hover:text-blue-600 font-medium transition duration-200">Services</a>
-                <a href="{% url 'how_it_works' %}" class="text-gray-600 hover:text-blue-600 font-medium transition duration-200">How It Works</a>
-                <a href="{% url 'providers' %}" class="text-gray-600 hover:text-blue-600 font-medium transition duration-200">Providers</a>
-                <a href="{% url 'about' %}" class="text-gray-600 hover:text-blue-600 font-medium transition duration-200">About</a>
-                <a href="{% url 'contact' %}" class="text-gray-600 hover:text-blue-600 font-medium transition duration-200">Contact</a>
+                <!-- Auth Buttons -->
+                <div class="flex items-center space-x-4">
+                    {% if user.is_authenticated %}
+                        <span class="text-gray-700 font-medium hidden sm:block">Hi, {{ user.username }}</span>
+                        <a href="{% url 'logout' %}" class="bg-red-50 text-red-600 px-4 py-2 rounded-lg hover:bg-red-100 transition font-semibold text-sm border border-red-100">
+                            Logout
+                        </a>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="text-gray-700 hover:text-blue-600 font-semibold transition duration-200 hidden sm:block">
+                            Login
+                        </a>
+                        <a href="{% url 'register' %}" class="bg-orange-500 text-white px-5 py-2.5 rounded-lg hover:bg-orange-600 transition font-bold shadow-md shadow-orange-500/20 transform hover:-translate-y-0.5 duration-200">
+                            Get Started
+                        </a>
+                    {% endif %}
+                </div>
+
             </div>
-
-            <!-- Auth Buttons -->
-            <div class="flex items-center space-x-4">
-                {% if user.is_authenticated %}
-                    <span class="text-gray-700 font-medium hidden sm:block">Hi, {{ user.username }}</span>
-                    <a href="{% url 'logout' %}" class="bg-red-50 text-red-600 px-4 py-2 rounded-lg hover:bg-red-100 transition font-semibold text-sm border border-red-100">
-                        Logout
-                    </a>
-                {% else %}
-                    <a href="{% url 'login' %}" class="text-gray-700 hover:text-blue-600 font-semibold transition duration-200 hidden sm:block">
-                        Login
-                    </a>
-                    <a href="{% url 'register' %}" class="bg-orange-500 text-white px-5 py-2.5 rounded-lg hover:bg-orange-600 transition font-bold shadow-md shadow-orange-500/20 transform hover:-translate-y-0.5 duration-200">
-                        Get Started
-                    </a>
-                {% endif %}
-            </div>
-
         </div>
-    </div>
-</nav>
+    </nav>
+
+    <!-- Main Content (pt-20 ensures content doesn't hide behind the fixed navbar) -->
+    <main class="pt-20 min-h-screen">
+        {% block content %}
+        <!-- Child templates will inject content here -->
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-12 border-t-4 border-orange-500">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-2 mb-4">
+                <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">G</div>
+                <span class="text-xl font-bold">GURA</span>
+            </div>
+            <p class="text-gray-400 text-sm">&copy; 2026 GURA. Built for the Hackathon. Find. Fix. Connect.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
