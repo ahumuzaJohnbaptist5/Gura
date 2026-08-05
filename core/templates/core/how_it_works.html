@@ -1,0 +1,68 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="bg-gray-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-4">How GURA Works</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Getting your devices repaired has never been easier.</p>
+        </div>
+
+        <!-- For Customers -->
+        <div class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">For Customers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4 shadow-lg">1</div>
+                    <h3 class="text-xl font-bold mb-2">Search</h3>
+                    <p class="text-gray-600">Find verified technicians or shops near you based on your repair needs.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4 shadow-lg">2</div>
+                    <h3 class="text-xl font-bold mb-2">Compare</h3>
+                    <p class="text-gray-600">Review ratings, prices, and services to choose the best provider.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4 shadow-lg">3</div>
+                    <h3 class="text-xl font-bold mb-2">Book</h3>
+                    <p class="text-gray-600">Schedule an appointment or order spare parts securely online.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4 shadow-lg">4</div>
+                    <h3 class="text-xl font-bold mb-2">Review</h3>
+                    <p class="text-gray-600">Get your device fixed and leave a review to help others.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- For Providers -->
+        <div>
+            <h2 class="text-3xl font-bold text-center mb-12 text-orange-600">For Providers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-orange-500 text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4 shadow-lg">1</div>
+                    <h3 class="text-xl font-bold mb-2">Register</h3>
+                    <p class="text-gray-600">Sign up and complete your profile with skills, services, and pricing.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-orange-500 text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4 shadow-lg">2</div>
+                    <h3 class="text-xl font-bold mb-2">Get Verified</h3>
+                    <p class="text-gray-600">Complete KYC verification to build trust with customers.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-orange-500 text-white rounded-full flex items-center justify-center text-3xl font-bold mx-auto mb-4 shadow-lg">3</div>
+                    <h3 class="text-xl font-bold mb-2">Grow Business</h3>
+                    <p class="text-gray-600">Receive bookings, manage appointments, and expand your customer base.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-20 text-center">
+            <a href="{% url 'register' %}" class="inline-block bg-orange-500 text-white px-10 py-4 rounded-lg font-bold hover:bg-orange-600 transition shadow-lg text-lg">
+                Get Started Today
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

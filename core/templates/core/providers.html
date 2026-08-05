@@ -1,0 +1,53 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="bg-gray-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Our Providers</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Connect with verified technicians and trusted repair shops across Uganda.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <!-- Technicians Card -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+                <div class="h-48 bg-gradient-to-r from-blue-600 to-blue-800 flex items-center justify-center">
+                    <i class="fas fa-user-cog text-8xl text-white/30"></i>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Independent Technicians</h3>
+                    <p class="text-gray-600 mb-6">Skilled professionals offering on-site and workshop repair services for all your devices.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-blue-600 font-semibold"><i class="fas fa-check-circle mr-2"></i>Verified & Rated</span>
+                        <a href="{% url 'technicians' %}" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">View All</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shops Card -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+                <div class="h-48 bg-gradient-to-r from-orange-500 to-orange-700 flex items-center justify-center">
+                    <i class="fas fa-store text-8xl text-white/30"></i>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Repair & Electronics Shops</h3>
+                    <p class="text-gray-600 mb-6">Established businesses offering repair services and genuine spare parts.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-orange-600 font-semibold"><i class="fas fa-check-circle mr-2"></i>Trusted Sellers</span>
+                        <a href="{% url 'shops' %}" class="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition">View All</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Become a Provider CTA -->
+        <div class="bg-gradient-to-r from-blue-900 to-blue-800 rounded-2xl p-12 text-center text-white">
+            <h2 class="text-3xl font-bold mb-4">Want to Become a Provider?</h2>
+            <p class="text-blue-100 mb-8 max-w-2xl mx-auto">Join our network of verified technicians and shops. Reach thousands of customers and grow your business.</p>
+            <a href="{% url 'register' %}" class="inline-block bg-orange-500 text-white px-10 py-4 rounded-lg font-bold hover:bg-orange-600 transition shadow-lg">
+                Join as a Provider
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

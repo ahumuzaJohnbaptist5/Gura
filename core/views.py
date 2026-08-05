@@ -1,34 +1,36 @@
-# core/views.py
-from django.shortcuts import render, redirect
-from django.contrib.auth import login, logout, authenticate
-from django.contrib.auth.forms import AuthenticationForm
-from .forms import UserRegistrationForm
+from django.shortcuts import render
+
 
 def home(request):
-    return render(request, 'core/index.html')
+    return render(request, "core/index.html") # <-- CORRECT
 
-def register_view(request):
+
+def about(request):
+    return render(request, "core/about.html")
+
+def how_it_works(request):
+    return render(request, "core/how_it_works.html")
+
+# ... (keep all your existing views) ...
+
+def services_view(request):
+    return render(request, 'core/services.html')
+
+def providers_view(request):
+    return render(request, 'core/providers.html')
+
+def about_view(request):
+    return render(request, 'core/about.html')
+
+def contact_view(request):
     if request.method == 'POST':
-        form = UserRegistrationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user) # Automatically log them in after registering
-            return redirect('home')
-    else:
-        form = UserRegistrationForm()
-    return render(request, 'core/register.html', {'form': form})
+        # Handle contact form submission
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        # In production, you would send an email or save to database
+        return render(request, 'core/contact_success.html', {'name': name})
+    return render(request, 'core/contact.html')
 
-def login_view(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            user = form.get_user()
-            login(request, user)
-            return redirect('home')
-    else:
-        form = AuthenticationForm()
-    return render(request, 'core/login.html', {'form': form})
-
-def logout_view(request):
-    logout(request)
-    return redirect('home')
+def contact_success_view(request):
+    return render(request, 'core/contact_success.html')    

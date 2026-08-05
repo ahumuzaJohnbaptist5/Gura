@@ -1,0 +1,74 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="bg-gray-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Our Services</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Comprehensive repair and electronics solutions tailored to your needs.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 p-8 border border-gray-100">
+                <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6">
+                    <i class="fas fa-laptop text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Laptop & Computer Repair</h3>
+                <p class="text-gray-600 mb-4">Screen replacement, hardware upgrades, virus removal, and software troubleshooting.</p>
+                <a href="{% url 'technicians' %}" class="text-orange-500 font-semibold hover:text-orange-600">Find Technicians &rarr;</a>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 p-8 border border-gray-100">
+                <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mb-6">
+                    <i class="fas fa-mobile-alt text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Phone & Tablet Repair</h3>
+                <p class="text-gray-600 mb-4">Screen fixes, battery replacement, water damage repair, and charging port issues.</p>
+                <a href="{% url 'technicians' %}" class="text-orange-500 font-semibold hover:text-orange-600">Find Technicians &rarr;</a>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 p-8 border border-gray-100">
+                <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6">
+                    <i class="fas fa-plug text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Electronics Repair</h3>
+                <p class="text-gray-600 mb-4">TVs, gaming consoles, home appliances, and other electronic devices.</p>
+                <a href="{% url 'technicians' %}" class="text-orange-500 font-semibold hover:text-orange-600">Find Technicians &rarr;</a>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 p-8 border border-gray-100">
+                <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mb-6">
+                    <i class="fas fa-shopping-cart text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Genuine Spare Parts</h3>
+                <p class="text-gray-600 mb-4">Original and high-quality replacement parts for all major brands.</p>
+                <a href="{% url 'products' %}" class="text-orange-500 font-semibold hover:text-orange-600">Browse Products &rarr;</a>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 p-8 border border-gray-100">
+                <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6">
+                    <i class="fas fa-tools text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">On-Site Repairs</h3>
+                <p class="text-gray-600 mb-4">Technicians come to your home or office for convenient service.</p>
+                <a href="{% url 'technicians' %}" class="text-orange-500 font-semibold hover:text-orange-600">Book Now &rarr;</a>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 p-8 border border-gray-100">
+                <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mb-6">
+                    <i class="fas fa-shield-alt text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Warranty & Support</h3>
+                <p class="text-gray-600 mb-4">All repairs come with warranty and ongoing technical support.</p>
+                <a href="{% url 'contact' %}" class="text-orange-500 font-semibold hover:text-orange-600">Learn More &rarr;</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
