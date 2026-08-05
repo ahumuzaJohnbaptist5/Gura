@@ -107,6 +107,7 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # <-- ADD THIS LINE FOR RENDER
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 # AUTH_USER_MODEL = 'core.User'
 AUTH_USER_MODEL = 'core.User'
