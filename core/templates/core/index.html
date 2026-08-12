@@ -1,369 +1,74 @@
 {% extends 'core/base.html' %}
-{% load static %}
+
 {% block content %}
-
-
-<div class="top-bar">
-
-    <div class="container d-flex justify-content-between">
-
-        <div>
-            📍 Kabale, Uganda
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-blue-700 to-blue-900 text-white py-24 relative overflow-hidden">
+    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 tracking-tight">Find. Fix. Connect.</h1>
+        <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+            The ultimate marketplace connecting you with verified technicians, repair shops, and genuine electronics in your area.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+            <a href="{% url 'register' %}" class="bg-orange-500 text-white px-8 py-4 rounded-lg font-bold hover:bg-orange-600 transition shadow-lg transform hover:-translate-y-1">
+                Join as a Customer
+            </a>
+            <a href="{% url 'register' %}" class="bg-white text-blue-700 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition shadow-lg transform hover:-translate-y-1">
+                Become a Provider
+            </a>
         </div>
-
-        <div>
-
-            <span class="me-3">
-                Trusted Technicians
-            </span>
-
-            <span>
-                Help Center
-            </span>
-
-        </div>
-
     </div>
-
-</div>
-
-<!-- In the Hero section, update the buttons: -->
-<div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-    <a href="{% url 'register' %}?role=customer" class="bg-orange-500 text-white px-8 py-4 rounded-lg font-bold hover:bg-orange-600 transition shadow-lg transform hover:-translate-y-1">
-        Join as a Customer
-    </a>
-    <a href="{% url 'register' %}?role=provider" class="bg-white text-blue-700 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition shadow-lg transform hover:-translate-y-1">
-        Become a Provider
-    </a>
-</div>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-
-    <div class="container">
-
-        <a class="navbar-brand d-flex align-items-center" href="#">
-
-            <img src="{% static 'images/logo.png' %}"
-                 width="50"
-                 class="me-2">
-
-            <div>
-
-                <h3 class="mb-0 logo-title">GURA</h3>
-
-                <small class="text-muted">
-                    Find. Fix. Connect.
-                </small>
-
-            </div>
-
-        </a>
-
-        <button class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
-
-            <span class="navbar-toggler-icon"></span>
-
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-end"
-             id="navbarNav">
-
-            <ul class="navbar-nav align-items-center">
-
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">How It Works</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Providers</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-
-                <li class="nav-item ms-3">
-                    <a href="#" class="btn-login">
-                        Login
-                    </a>
-                </li>
-
-                <li class="nav-item ms-3">
-                    <a href="#" class="btn-get-started">
-                        Get Started
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</nav>
-
-
-
-<section class="hero">
-
-<div class="container">
-
-<div class="row align-items-center">
-
-<div class="col-lg-6">
-
-<h1>
-
-Find.
-
-<span>Fix.</span>
-
-Connect.
-
-</h1>
-
-<p>
-
-The ultimate marketplace connecting customers with
-trusted repair technicians.
-
-</p>
-
-<div class="mt-4">
-
-<a href="" class="btn btn-warning btn-lg">
-
-Join as Customer
-
-</a>
-
-<a href="" class="btn btn-light btn-lg ms-2">
-
-Become a Provider
-
-</a>
-
-</div>
-
-</div>
-
-<div class="col-lg-6">
-
-<img src="{% static 'images/technician.jpg' %}"
-class="img-fluid">
-
-</div>
-
-</div>
-
-</div>
-
 </section>
 
-<section class="py-5">
-
-<div class="container">
-
-<h2 class="text-center">
-
-How GURA Works
-
-</h2>
-
-<div class="row mt-5">
-
-<div class="col-md-4">
-
-<div class="card">
-
-<div class="card-body">
-
-<h3>1</h3>
-
-<h4>Find</h4>
-
-<p>
-
-Search for technicians near you.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="card">
-
-<div class="card-body">
-
-<h3>2</h3>
-
-<h4>Connect</h4>
-
-<p>
-
-Compare providers.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="col-md-4">
-
-<div class="card">
-
-<div class="card-body">
-
-<h3>3</h3>
-
-<h4>Fix</h4>
-
-<p>
-
-Book and get your device repaired.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-
-    <div class="container">
-
-        <div class="row gy-4">
-
-            <!-- Brand -->
-            <div class="col-lg-4">
-
-                <h3 class="logo">
-                    GURA
-                </h3>
-
-                <p>
-                    GURA is Uganda's trusted marketplace connecting customers
-                    with verified computer technicians, repair shops,
-                    electronics suppliers and spare-part dealers.
-                </p>
-
-            </div>
-
-            <!-- Quick Links -->
-            <div class="col-lg-2">
-
-                <h5>Quick Links</h5>
-
-                <ul class="footer-links">
-
-                    <li><a href="#">Home</a></li>
-
-                    <li><a href="./services/">Services</a></li>
-
-                    <li><a href="./providers/">Providers</a></li>
-
-                    <li><a href="./contact/">Contact</a></li>
-
-                </ul>
-
-            </div>
-
-            <!-- Services -->
-            <div class="col-lg-3">
-
-                <h5>Services</h5>
-
-                <ul class="footer-links">
-
-                    <li>Laptop Repair</li>
-
-                    <li>Phone Repair</li>
-
-                    <li>Electronics</li>
-
-                    <li>Accessories</li>
-
-                </ul>
-
-            </div>
-
-            <!-- Contact -->
-            <div class="col-lg-3">
-
-                <h5>Contact</h5>
-
-                <p>
-
-                    Kabale, Uganda
-
-                    <br>
-
-                    +256 775 523720
-
-                    <br>
-
-                    info@gura.ug
-
-                </p>
-
-                <div class="social-icons">
-
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-
-                    <a href="#"><i class="fab fa-x-twitter"></i></a>
-
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-
+<!-- Features Section -->
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How GURA Works</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">A seamless experience from search to secure payment.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Feature 1 -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border-t-4 border-orange-500">
+                <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-search text-2xl"></i>
                 </div>
-
+                <h3 class="text-xl font-bold mb-3 text-gray-900">Search Nearby</h3>
+                <p class="text-gray-600 leading-relaxed">Find top-rated technicians and shops based on your location and specific repair needs.</p>
             </div>
-
+            
+            <!-- Feature 2 -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border-t-4 border-blue-600">
+                <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-calendar-check text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-gray-900">Book & Buy</h3>
+                <p class="text-gray-600 leading-relaxed">Schedule repair appointments instantly or buy genuine spare parts directly from verified shops.</p>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition duration-300 border-t-4 border-orange-500">
+                <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center mb-6">
+                    <i class="fas fa-shield-alt text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3 text-gray-900">Secure & Verified</h3>
+                <p class="text-gray-600 leading-relaxed">All providers are KYC verified. Pay securely through our platform and leave honest reviews.</p>
+            </div>
         </div>
-
-        <hr>
-
-        <div class="copyright">
-
-            © 2026 GURA. All Rights Reserved.
-
-        </div>
-
     </div>
+</section>
 
-</footer>
-
+<!-- Call to Action -->
+<section class="bg-blue-900 py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-800"></div>
+    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to get started?</h2>
+        <p class="text-blue-200 mb-10 text-lg">Join thousands of users and providers transforming the repair industry in Uganda.</p>
+        <a href="{% url 'register' %}" class="inline-block bg-orange-500 text-white px-10 py-4 rounded-lg font-bold hover:bg-orange-600 transition shadow-lg transform hover:-translate-y-1">
+            Create Free Account
+        </a>
+    </div>
+</section>
 {% endblock %}
